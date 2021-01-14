@@ -30,4 +30,21 @@ public class UserServicelmpl implements UserService {
         return user;
     }
 
+    public boolean updatePwd(int id, String password) {
+        Connection connection = null;
+        boolean flag = false;
+        try {
+            connection = BaseDao.getConnection();
+            int i = userDao.updatePwd(connection, id, password);
+            if (i > 0) {
+                flag = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            BaseDao.close(connection, null, null);
+        }
+        return flag;
+    }
+
 }

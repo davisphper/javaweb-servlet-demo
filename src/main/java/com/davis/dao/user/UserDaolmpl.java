@@ -8,6 +8,16 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class UserDaolmpl implements UserDao {
+
+    /**
+     * 获取登录用户
+     *
+     * @param connection
+     * @param userCode
+     * @param password
+     * @return
+     * @throws Exception
+     */
     public User getLoginUser(Connection connection, String userCode, String password) throws Exception {
 
         PreparedStatement preparedStatement = null;
@@ -37,5 +47,26 @@ public class UserDaolmpl implements UserDao {
             BaseDao.close(null, preparedStatement, resultSet);
         }
         return user;
+    }
+
+    /**
+     * 修改当前登录用户密码
+     *
+     * @param connection
+     * @param id
+     * @param password
+     * @return
+     * @throws Exception
+     */
+    public int updatePwd(Connection connection, int id, String password) throws Exception {
+        PreparedStatement preparedStatement = null;
+        int updateRows = 0;
+        if (connection != null) {
+            String sql = "update smbms_user set userPassword = ? where id = ?";
+            Object[] params = {password, id};
+            updateRows = BaseDao.execute(connection, preparedStatement, sql, params);
+            BaseDao.close(null, preparedStatement, null);
+        }
+        return updateRows;
     }
 }

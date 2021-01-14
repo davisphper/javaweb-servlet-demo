@@ -20,7 +20,7 @@ public class SysFilter implements Filter {
         User user = (User) request.getSession().getAttribute(Constants.USER_SESSION);
         //判断用户登录是否有效
         if (user == null) { //登录失效, 重定向至登录页
-            response.sendRedirect("/login.jsp");
+            response.sendRedirect("/error.jsp");
         } else {
             filterChain.doFilter(req, resp);
         }

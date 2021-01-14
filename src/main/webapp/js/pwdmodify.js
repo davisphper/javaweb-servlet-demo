@@ -69,7 +69,7 @@ $(function(){
 		oldpassword.blur();
 		newpassword.blur();
 		rnewpassword.blur();
-		if(oldpassword.attr("validateStatus") == "true" 
+		if(oldpassword.attr("validateStatus") == "true"
 			&& newpassword.attr("validateStatus") == "true"
 			&& rnewpassword.attr("validateStatus") == "true"){
 			if(confirm("确定要修改密码？")){
