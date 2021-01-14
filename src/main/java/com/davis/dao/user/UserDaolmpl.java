@@ -15,7 +15,6 @@ public class UserDaolmpl implements UserDao {
         User user = null;
         if (connection != null) {
             String sql = "select * from smbms_user where userCode = ? and userPassword = ?";
- 
             Object[] params = {userCode, password};
 
             resultSet = BaseDao.execute(connection, resultSet, preparedStatement, sql, params);
