@@ -24,8 +24,8 @@ public class RoleDaolmpl implements RoleDao{
             while (resultSet.next()) {
                 Role _role = new Role();
                 _role.setId(resultSet.getInt("id"));
-                _role.setRoleName(resultSet.getString("setRoleName"));
-                _role.setRoleCode(resultSet.getString("setRoleCode"));
+                _role.setRoleName(resultSet.getString("roleName"));
+                _role.setRoleCode(resultSet.getString("roleCode"));
                 roles.add(_role);
             }
             //关闭资源

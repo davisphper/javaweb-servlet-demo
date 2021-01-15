@@ -4,6 +4,7 @@ import com.davis.dao.BaseDao;
 import com.davis.dao.role.RoleDao;
 import com.davis.dao.role.RoleDaolmpl;
 import com.davis.pojo.Role;
+import org.junit.Test;
 
 import java.sql.Connection;
 import java.util.List;
@@ -28,5 +29,15 @@ public class RoleServicelmpl implements RoleService {
             BaseDao.close(connection, null, null);
         }
         return roleList;
+    }
+
+    @Test
+    public void test()
+    {
+        RoleServicelmpl roleServicelmpl = new RoleServicelmpl();
+        List<Role> roleList = roleServicelmpl.getRoleList();
+        for (Role role : roleList) {
+            System.out.println(role.getRoleName());
+        }
     }
 }

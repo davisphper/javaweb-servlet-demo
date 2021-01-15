@@ -25,12 +25,38 @@ public class UserServlet extends HttpServlet {
             this.updatePwd(req, resp);
         } else if (method.equals("pwdmodify") && method != null) {
             this.pwdmodify(req, resp);
+        } else if (method.equals("query")) {
+            this.pwdmodify(req, resp);
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doGet(req, resp);
+    }
+
+    public void query(HttpServletRequest req, HttpServletResponse resp) {
+        String queryname = req.getParameter("queryname");
+        String temp = req.getParameter("queryUserRole");
+        String pageIndex = req.getParameter("pageIndex");
+
+        UserServicelmpl userServicelmpl = new UserServicelmpl();
+        //条数
+        int pageSize = 5;
+        //页码
+        int currentPageNo = 1;
+
+        int queryUserRole = 0;
+        if (queryname == null) {
+            queryname = "";
+        }
+        if (!StringUtils.isNullOrEmpty(temp)) {
+            queryUserRole = Integer.parseInt(temp);
+        }
+        if (pageIndex != null) {
+            currentPageNo = Integer.parseInt(pageIndex);
+        }
+
     }
 
     /**
