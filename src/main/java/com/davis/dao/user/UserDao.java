@@ -18,7 +18,4 @@ public interface UserDao {
 
     //通过条件查询-userList
     public List<User> getUserList(Connection connection, String userName, int userRole, int currentPageNo, int pageSize) throws Exception;
-
-    //角色列表
-    public List<Role> getRoleList(Connection connection) throws Exception;
 }

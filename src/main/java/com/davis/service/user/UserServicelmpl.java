@@ -1,10 +1,9 @@
-package com.davis.service;
+package com.davis.service.user;
 
 import com.davis.dao.BaseDao;
 import com.davis.dao.user.UserDao;
 import com.davis.dao.user.UserDaolmpl;
 import com.davis.pojo.User;
-import org.junit.Test;
 
 import java.sql.Connection;
 import java.util.List;

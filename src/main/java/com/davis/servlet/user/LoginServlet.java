@@ -1,7 +1,7 @@
 package com.davis.servlet.user;
 
 import com.davis.pojo.User;
-import com.davis.service.UserServicelmpl;
+import com.davis.service.user.UserServicelmpl;
 import com.davis.util.Constants;
 
 import javax.servlet.ServletException;

@@ -1,5 +1,6 @@
-package com.davis.service;
+package com.davis.service.user;
 
+import com.davis.pojo.Role;
 import com.davis.pojo.User;
 
 import java.util.List;

@@ -2,7 +2,7 @@ package com.davis.servlet.user;
 
 import com.alibaba.fastjson.JSONArray;
 import com.davis.pojo.User;
-import com.davis.service.UserServicelmpl;
+import com.davis.service.user.UserServicelmpl;
 import com.davis.util.Constants;
 import com.mysql.jdbc.StringUtils;
 
